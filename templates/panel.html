@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>panel | Senda 7</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <h2>Hola, {{ nombre_usuario }}</h2>
+            <a href="{{ url_for('perfil') }}" class="btn-perfil">configuración de Perfil</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="progreso">
+            <h3>Tu Prepgreso</h3>
+            <div class="grafico">
+                <canvas id="graficoProgreso" width="200" height="200"></canvas>
+                <div class="porcentaje" id="porcentaje">0%</div>
+            </div>
+        </section>
+
+        <section class="secciones">
+            <button onclick="location.href='{{ url_for('organizacion') }}'">Organización del Estudio</button>
+            <button onclick="location.href='{{ url_for('gestion_tiempo') }}'">Gestor del Tiempo</button>
+            <button onclick="location.href='{{ url_for('espititual') }}'">Crecimiento Espiritual</button>
+            <button onclick="location.href='{{ url_for('reflexion') }}'">Reflexión y Prpósito</button>
+        </section>
+    </main>
+    <script>
+        // simulacion del grafico circular
+        document.addEventListener("DOMContentLoaded", () => {
+            const porcentaje = 5;
+            document.getElementById("porcentaje").innerText = porcentaje + "%";
+
+            const canvas = document.getElementById("graficoProgreso");
+            const ctx = canvas.getContext("2d");
+
+            ctx.lineWidth = 15;
+            ctx.strokeStyle = "#ddd"
+            ctx.arc(100, 100, 80, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.strokeStyle = "#007BFF";
+            ctx.beginPath();
+            ctx.arc(100, 100, 80, -0.5 * Math.PI, (porcentaje / 100) * 2 * Math.PI - 0.5 * Math.PI);
+            ctx.stroke();
+        });
+    </script>
+</body>
+</html>

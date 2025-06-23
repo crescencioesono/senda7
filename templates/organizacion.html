@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizacion del Estudio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Organización del Estudio</h1>
+        <form action="{{ url_for('organizacion') }}" method="post">
+            <label for="materia">Materia o Tema</label>
+            <input type="text" id="materia" name="materia" required>
+
+            <label for="horas">Horas que planeas Estudiar al dia</label>
+            <input type="number" id="horas" name="horas" required>
+
+            <label for="objetivo">¿Cuál es tu Objetivo o Meta</label>
+            <textarea name="objetivo" id="objetivo" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        {% if recomendacion %}
+            <div class="recomendacion">
+                <h2>Recomendacion Personalizada</h2>
+                <p>{{ recomendacion}}</p>
+            </div>
+        {% endif %}
+        
+        <a href="/panel" class="volver">volver al Panel</a>
+    </div>
+</body>    
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido | Senda 7</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <div class="contenedor-bienvenida">
+        <div class="tarjeta">
+            <h1>¡Bienvenido a Senda 7!</h1>
+            <p class="mensaje">Has dado el primer paso hacia una vida más organizada, enfocada y con propósito</p>
+            <form action="/objetivos" method="get">
+                <button class="btn-continuar" type="submit">continuar</button>
+            </form>
+        </div>
+    </div>
+</body>    
+</html>

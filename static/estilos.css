@@ -1,0 +1,379 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f3;
+    color: #333;
+}
+
+.contenedor-registro {
+    display: flex;
+    height: 100vh;
+}
+
+.lado-izquierdo {
+    flex: 1;
+    background-color: #2c6e49;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lado-izquierdo h1 {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.frase {
+    font-size: 20px;
+    color: white;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.lado-derecho {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+
+.lado-derecho h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2c6e49;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #2c6e49;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #244f38;
+}
+
+.enlace {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.enlace-login {
+    text-decoration: none;
+    color: #007BFF;
+    transition: color 0.3 ease, text-shadow 0.3 ease;
+}
+
+.enlace-login:hover {
+    color: #0056b3;
+    text-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+.mensajes-error {
+    background-color: #ffe6e6;
+    color: #a94442;
+    border: 1px solid #e6bcbc;
+    padding: 10px;
+    border-radius: 5px;
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.contenedor-bienvenida {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.tarjeta {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 500px;
+}
+
+.tarjeta h1 {
+    color: #2c6e49;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.mensaje {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn-continuar {
+    background-color: #2c6e49;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-continuar:hover {
+    background-color: #244f38;
+}
+
+.contenedor-objetivos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #eef5f0;
+}
+
+.checkbox-lista {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.checkbox-lista label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.contenedor-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f6f3;
+}
+
+.tarjeta-login {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.tarjeta-login h2 {
+    margin-bottom: 20px;
+    color: #2c6e49;
+}
+
+.tarjeta-login label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.tarjeta-login input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px; 
+    box-sizing: border-box;
+}
+
+.tarjeta-login button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background-color: #2c6e49;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tarjeta-login button:hover {
+    background-color: #244f38;
+}
+
+.registro-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+
+.enlace-registro {
+    text-decoration: none;
+    color: #007BFF;
+    transition: color 0.3 ease, text-shadow 0.3 ease;
+}
+
+.enlace-registro:hover {
+    color: #0056b3;
+    text-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+.mensajes-error {
+    color: red;
+    list-style: none;
+    padding: 0;
+}
+
+header {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-perfil {
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 12px;
+    background-color: #0056b3;
+    border-radius: 4px;
+}
+
+main {
+    padding: 20px;
+}
+
+.progreso {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.grafico {
+    position: relative;
+    display: inline-block;
+}
+
+.porcentaje {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.btn-cerrar {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #dc2545;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.secciones button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px;
+    font-size: 1em;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ button:hover {
+    background: #0056b3;
+ }
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #2c6e49;
+} 
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 15px;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #2c6e49;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.recomendacion {
+    background: #ecf0f1;
+    padding: 15px;
+    margin-top: 20px;
+    border-left: 5px solid #3498db;
+}
+
+.volver {
+    display: inline-block;
+    margin-top: 20px;
+    color: #2c6e49;
+    text-decoration: none;
+}
+
+.volver:hover {
+    text-decoration: underline;
+}

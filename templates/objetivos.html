@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Selecciona tus objetivos / Senda 7</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <div class="contenedor-objetivos">
+        <div class="tarjeta">
+            <h2>¿En qué areas quieres crecer?</h2>
+            <p class="instruccion">Selecciona al menos 2 objetivos personales:</p>
+
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul class="mensajes_error">
+                  {% for message in messages %}
+                    <li>{{message}}</li>
+                  {% endfor %}  
+                </ul>
+              {% endif %}
+            {% endwith %}
+            
+            <form method="POST">
+              <div class="checkbox-lista">
+                <label><input type="checkbox" name="objetivos" value="estudio"> Organización del estudio</label>
+                <label><input type="checkbox" name="objetivos" value="emocional"> Bienestar emocional</label>
+                <label><input type="checkbox" name="objetivos" value="tiempo"> Gestión de tiempo</label>
+                <label><input type="checkbox" name="objetivos" value="espiritual"> Crecimiento espiritual</label>
+                <label><input type="checkbox" name="objetivos" value="habitos"> Dessarrollo de hábitos</label>
+                <label><input type="checkbox" name="objetivos" value="propósito"> Reflexión y propósito</label>
+              </div>
+              
+              <button type="submit">Continuar</button>
+            </form>  
+        </div>
+    </div>
+</body>
+</html>

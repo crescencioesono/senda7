@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>configuración de Perfil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <section id="configuracion-perfil">
+        <h2>Configuración de Perfil</h2>
+
+        <form method="POST" action="/actualizar_perfil">
+            <label for="nombre_usuario">Nombre de Usuario:</label>
+            <input type="text" id="nombre_usuario" name="nombre_usuario">
+            
+            <label for="contraseña">Cambiar contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña">
+
+            <label for="region">Región:</label>
+            <input type="text" id="region" name="region">
+
+            <label for="idioma">Idioma:</label>
+            <select id="idioma" name="idioma">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+            </select>
+
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+
+            <label for="notificaciones">Preferencias de Notificación:</label>
+            <select id="notificaciones" name="notificaciones">
+                <option value="on">Activadas</option>
+                <option value="off">Desactivadas</option>
+            </select>
+
+            <label for="tema">Tema de Interfaz:</label>
+            <select id="tema" name="tema">
+                <option value="claro">Claro</option>
+                <option value="oscuro">Oscuro</option>
+            </select>
+
+            <button type="submit">Guardar Cambios</button>
+        </form>
+        
+        <a href="/panel" class="volver">Volver al Panel</a>
+    </section>
+</body>    
+</html>
