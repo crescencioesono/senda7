@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crecimiento Espiritual</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Crecimiento Espiritual</h1>
+        <form action="{{ url_for('crecimiento_espiritual') }}" method="post">
+            <label for="practicas">Prácticas Espirituales</label>
+            <input type="text" id="practicas" name="practicas" required>
+
+            <label for="reflexiones">Reflexiones Diarias</label>
+            <textarea name="reflexiones" id="reflexiones" rows="4" required></textarea>
+
+            <label for="metas">Metas Espirituales</label>
+            <input type="text" id="metas" name="metas" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        {% if recomendacion %}
+        <div class="recomendacion">
+            <h2>Recomendación Personalizada</h2>
+            <p>{{ recomendacion }}</p>
+        </div>
+        {% endif %}
+
+        <a href="/panel" class="volver">Volver al Panel</a>
+    </div>
+</body>
+
+</html>

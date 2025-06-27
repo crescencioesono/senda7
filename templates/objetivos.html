@@ -8,27 +8,27 @@
 <body>
     <div class="contenedor-objetivos">
         <div class="tarjeta">
-            <h2>¿En qué areas quieres crecer?</h2>
+            <h2>¿En qué áreas quieres crecer?</h2>
             <p class="instruccion">Selecciona al menos 2 objetivos personales:</p>
 
             {% with messages = get_flashed_messages() %}
               {% if messages %}
                 <ul class="mensajes_error">
                   {% for message in messages %}
-                    <li>{{message}}</li>
+                    <li>{{ message }}</li>
                   {% endfor %}  
                 </ul>
               {% endif %}
             {% endwith %}
             
-            <form method="POST">
+            <form method="POST" action="{{ url_for('seleccionar_objetivos') }}">
               <div class="checkbox-lista">
-                <label><input type="checkbox" name="objetivos" value="estudio"> Organización del estudio</label>
+                <label><input type="checkbox" name="objetivos" value="organizacion"> Organización del estudio</label>
                 <label><input type="checkbox" name="objetivos" value="emocional"> Bienestar emocional</label>
                 <label><input type="checkbox" name="objetivos" value="tiempo"> Gestión de tiempo</label>
                 <label><input type="checkbox" name="objetivos" value="espiritual"> Crecimiento espiritual</label>
-                <label><input type="checkbox" name="objetivos" value="habitos"> Dessarrollo de hábitos</label>
-                <label><input type="checkbox" name="objetivos" value="propósito"> Reflexión y propósito</label>
+                <label><input type="checkbox" name="objetivos" value="habitos"> Desarrollo de hábitos</label>
+                <label><input type="checkbox" name="objetivos" value="proposito"> Reflexión y propósito</label>
               </div>
               
               <button type="submit">Continuar</button>

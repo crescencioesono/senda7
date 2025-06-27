@@ -1,33 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>panel | Senda 7</title>
+    <title>Panel | Senda 7</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
 </head>
+
 <body>
     <header>
         <div class="top-bar">
-            <h2>Hola, {{ nombre_usuario }}</h2>
-            <a href="{{ url_for('perfil') }}" class="btn-perfil">configuración de Perfil</a>
+            <h2 style="color: white;">Hola, {{ nombre_usuario }}</h2>
+            <a href="{{url_for('logout')}}" class="exit">Salir</a>
         </div>
     </header>
 
     <main>
-        <section class="progreso">
+        <!-- <section class="progreso">
             <h3>Tu Prepgreso</h3>
             <div class="grafico">
                 <canvas id="graficoProgreso" width="200" height="200"></canvas>
                 <div class="porcentaje" id="porcentaje">0%</div>
             </div>
-        </section>
+        </section> -->
 
         <section class="secciones">
-            <button onclick="location.href='{{ url_for('organizacion') }}'">Organización del Estudio</button>
-            <button onclick="location.href='{{ url_for('gestion_tiempo') }}'">Gestor del Tiempo</button>
-            <button onclick="location.href='{{ url_for('espititual') }}'">Crecimiento Espiritual</button>
-            <button onclick="location.href='{{ url_for('reflexion') }}'">Reflexión y Prpósito</button>
+            {% if objetivos %}
+            <table class="objetivos-tabla">
+                <thead>
+                    <tr>
+                        <th>Objetivo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for objetivo in objetivos %}
+                    <tr>
+                        <td>
+                            {% if objetivo == "organizacion" %}
+                            <a href="{{ url_for('organizacion') }}">Organización del estudio</a>
+                            {% elif objetivo == "emocional" %}
+                            <a href="{{ url_for('bienestar_emocional') }}">Bienestar emocional</a>
+                            {% elif objetivo == "tiempo" %}
+                            <a href="{{ url_for('gestion_tiempo') }}">Gestión de tiempo</a>
+                            {% elif objetivo == "espiritual" %}
+                            <a href="{{ url_for('crecimiento_espiritual') }}">Crecimiento espiritual</a>
+                            {% elif objetivo == "habitos" %}
+                            <a href="{{ url_for('desarrollo_habitos') }}">Desarrollo de hábitos</a>
+                            {% elif objetivo == "proposito" %}
+                            <a href="{{ url_for('reflexion_proposito') }}">Reflexión y propósito</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p>No has seleccionado ningún objetivo aún.</p>
+            {% endif %}
         </section>
     </main>
     <script>
@@ -44,11 +74,12 @@
             ctx.arc(100, 100, 80, 0, 2 * Math.PI);
             ctx.stroke();
 
-            ctx.strokeStyle = "#007BFF";
+            ctx.strokeStyle = "#2c6e49";
             ctx.beginPath();
             ctx.arc(100, 100, 80, -0.5 * Math.PI, (porcentaje / 100) * 2 * Math.PI - 0.5 * Math.PI);
             ctx.stroke();
         });
     </script>
 </body>
+
 </html>

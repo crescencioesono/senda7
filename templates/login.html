@@ -20,9 +20,9 @@
               {% endif %} 
             {% endwith %}
             
-            <form method="POST">
-                <label for="Usuario">Usuario</label>
-                <input type="text" id="Usuario" name="Usuario" required>
+            <form action="/login" method="POST">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="Usuario" name="usuario" required>
 
                 <label for="password">Contraseña</label>
                 <input type="password" id="password" name="password" required>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro | Senda 7</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro | Senda 7</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
 </head>
+
 <body>
   <div class="contenedor-registro">
     <div class="lado-izquierdo">
@@ -16,19 +18,21 @@
     <div class="lado-derecho">
       <h2>Crear cuenta</h2>
 
-      {% with messages = get_flashed_messages() %}
-        {% if messages %}
-          <ul class="mensajes_error">
-            {% for message in message %}
-               <li>{{ message }}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      <div class="mb-4">
+        {% for category, message in messages %}
+        <div class="flash-message flash-{{ category }} rounded-md shadow-sm mb-2 text-sm">
+          {{ message }}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
       {% endwith %}
 
-      <form method="POST">
+      <form action="{{url_for('registro')}}" method="POST">
         <label for="Usuario">Usuario</label>
-        <input type="text" id="Usuario" name="Usuario" required>
+        <input type="text" id="usuario" name="usuario" required>
 
         <label for="password">Contraseña</label>
         <input type="password" id="password" name="password" required>
@@ -36,8 +40,8 @@
         <label for="confirmar">Confirmar Contraseña</label>
         <input type="password" id="confirmar" name="confirmar" required>
 
-        <label for="país">País</label>
-        <select id="país" name="país">
+        <label for="pais">País</label>
+        <select id="país" name="pais">
           <option value="GE">Guinea Ecuatorial</option>
           <option value="ES">España</option>
           <option value="MX">México</option>
@@ -47,10 +51,10 @@
 
         <button type="submit">Comenzar mi senda</button>
       </form>
-      
+
       <p>¿Ya tienes cuenta? <a href="/login" class="enlace-login">Iniciar sesión</a></p>
     </div>
   </div>
 </body>
+
 </html>
-      

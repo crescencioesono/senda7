@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienestar Emocional</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bienestar Emocional</h1>
+        <form action="{{ url_for('bienestar_emocional') }}" method="post">
+            <label for="emociones">Emociones Principales</label>
+            <input type="text" id="emociones" name="emociones" required>
+
+            <label for="estrategias">Estrategias de Manejo Emocional</label>
+            <textarea name="estrategias" id="estrategias" rows="4" required></textarea>
+
+            <label for="actividades">Actividades de Relajación</label>
+            <input type="text" id="actividades" name="actividades" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        {% if recomendacion %}
+        <div class="recomendacion">
+            <h2>Recomendación Personalizada</h2>
+            <p>{{ recomendacion }}</p>
+        </div>
+        {% endif %}
+
+        <a href="/panel" class="volver">Volver al Panel</a>
+    </div>
+</body>
+
+</html>

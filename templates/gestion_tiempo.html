@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tiempo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gestión de Tiempo</h1>
+        <form action="{{ url_for('gestion_tiempo') }}" method="post">
+            <label for="tareas">Tareas Principales</label>
+            <input type="text" id="tareas" name="tareas" required>
+
+            <label for="prioridades">Prioridades Diarias</label>
+            <textarea name="prioridades" id="prioridades" rows="4" required></textarea>
+
+            <label for="bloques">Número de Bloques de Tiempo</label>
+            <input type="number" id="bloques" name="bloques" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        {% if recomendacion %}
+        <div class="recomendacion">
+            <h2>Recomendación Personalizada</h2>
+            <p>{{ recomendacion }}</p>
+        </div>
+        {% endif %}
+
+        <a href="/panel" class="volver">Volver al Panel</a>
+    </div>
+</body>
+
+</html>
